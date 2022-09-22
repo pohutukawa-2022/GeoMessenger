@@ -1,3 +1,19 @@
-# boilerplate
+# GeoMessenger
 
-vite, tailwind, express, Redux toolkit, react, auth0
+Thur 22nd
+- We discussed and experimented with two tracks of Geo Server storage
+- As it stands, we store local storage on SQL Lite 3
+- We have full stack working 
+- Merging Frey-Taylor branch to Dev
+
+Friday 23rd
+
+Saturday 24th 
+
+Sunday 25th 
+
+Monday 28th
+
+Tuesday 29th
+
+Wednesday 30th 

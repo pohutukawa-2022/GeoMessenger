@@ -13,4 +13,4 @@ module.exports = {
   getMessage,
 }
 
-// let input = { lat: -36.8645, long: 174.7765 }
+

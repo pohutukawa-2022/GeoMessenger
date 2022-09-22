@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { getMessages } from '../api'
 
 export default function Message() {
   const [location, setLocation] = useState({
@@ -14,6 +15,8 @@ export default function Message() {
             long: position.coords.longitude,
             lat: position.coords.latitude,
           })
+
+          getMessages(location)
         })
       } else {
         // x.innerHTML = 'Geolocation is not supported by this browser.'

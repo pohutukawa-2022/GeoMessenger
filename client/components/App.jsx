@@ -9,6 +9,7 @@ import { getUser } from '../api'
 import Register from './Register'
 import { useDispatch } from 'react-redux'
 import { clearLoggedInUser, updateLoggedInUser } from '../slices/user'
+import Message from './Message'
 
 function App() {
   useCacheUser()
@@ -39,6 +40,7 @@ function App() {
         <Route path="/" element={<Fruits />} />
         <Route path="register" element={<Register />} />
       </Routes>
+      <Message />
     </>
   )
 }

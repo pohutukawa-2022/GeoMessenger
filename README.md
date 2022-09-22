@@ -7,7 +7,8 @@ Thur 22nd
 - Merging Frey-Taylor branch to Dev
 
 Friday 23rd
-
+-Frey & Xavier getting a basic UI up
+-Taylor & Benson Showing messages on page
 Saturday 24th 
 
 Sunday 25th 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+
 import { getMessages } from '../api'
 
 export default function Message() {
@@ -7,7 +8,7 @@ export default function Message() {
     long: null,
   })
 
-  useEffect(() => {
+  useEffect(async () => {
     const interval = setInterval(() => {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {

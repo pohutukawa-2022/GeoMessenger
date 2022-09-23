@@ -4,7 +4,7 @@ function getMessage(input, db = connection) {
   const lat = Number(input.lat)
   const long = Number(input.long)
   console.log(lat, long)
-  const r = 0.00005
+  const r = 0.0005
   return db('messages')
     .whereBetween('lat', [lat - r, lat + r])
     .whereBetween('long', [long - r, long + r])

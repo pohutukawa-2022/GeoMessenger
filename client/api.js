@@ -3,10 +3,11 @@ import request from 'superagent'
 const rootUrl = '/api/v1'
 
 export function getMessages(location) {
-  // console.log(location)
+  console.log('hits the api')
   return request
     .get(`${rootUrl}/messages?lat=${location.lat}&long=${location.long}`)
     .then((res) => {
+      console.log(res.body)
       return res.body
     })
     .catch(logError)

@@ -10,6 +10,7 @@ module.exports = router
 
 router.get('/', async (req, res) => {
   const input = req.query
+  console.log(input)
 
   try {
     const msg = await db.getMessage(input)

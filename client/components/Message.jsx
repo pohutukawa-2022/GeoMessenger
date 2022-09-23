@@ -7,43 +7,37 @@ export default function Message() {
     lat: null,
     long: null,
   })
+
   const [message, setMessage] = useState([])
   const [loader, setLoader] = useState(false)
 
-  // useEffect(async () => {
-  const interval = setInterval(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        setLocation({
-          long: position.coords.longitude,
-          lat: position.coords.latitude,
-        })
-        getMessages(location)
-          .then((res) => {
-            setMessage(res)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          setLocation({
+            long: position.coords.longitude,
+            lat: position.coords.latitude,
           })
-          .finally(() => setLoader(false))
-          .catch('')
+        })
+      } else {
+        // x.innerHTML = 'Geolocation is not supported by this browser.'
+        alert('Geolocation is not supported by this browser.')
+      }
+    }, 1000)
+    return () => clearInterval(interval)
+  }, [])
+
+  useEffect(() => {
+    setLoader(true)
+    console.log(location)
+    getMessages(location)
+      .then((res) => {
+        setMessage(res)
       })
-    } else {
-      // x.innerHTML = 'Geolocation is not supported by this browser.'
-      alert('Geolocation is not supported by this browser.')
-    }
-  }, 1000)
-  // return () => clearInterval(interval)
-  // }
-
-  // , [])
-
-  // useEffect(() => {
-  //   setLoader(true)
-  //   getMessages(location)
-  //     .then((res) => {
-  //       setMessage(res)
-  //     })
-  //     .finally(() => setLoader(false))
-  //     .catch('')
-  // }, [location])
+      .finally(setLoader(false))
+      .catch('')
+  }, [])
 
   //just to see location
   //const x = document.getElementById('demo')
